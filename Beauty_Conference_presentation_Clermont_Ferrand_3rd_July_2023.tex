@@ -1,0 +1,424 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Overleaf (WriteLaTeX) Example: Molecular Chemistry Presentation
+%
+% Source: http://www.overleaf.com
+%
+% In these slides we show how Overleaf can be used with standard 
+% chemistry packages to easily create professional presentations.
+% 
+% Feel free to distribute this example, but please keep the referral
+% to overleaf.com
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Madrid}       % or try default, Darmstadt, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}    % or try default, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+  \hypersetup{colorlinks=true}
+  \hypersetup{urlcolor=blue}
+  \hypersetup{linkcolor = .}
+\usepackage{xcolor}
+\usepackage{siunitx}
+  \sisetup{separate-uncertainty = true}
+\usepackage{physics}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage[en-GB]{datetime2}
+\usepackage{overpic}
+\usepackage{feynmp}
+\DeclareGraphicsRule{*}{mps}{*}{}
+\usepackage{scalerel}
+\newcommand{\mylbrace}[2]{\vspace{#2pt}\hspace{6pt}\scaleleftright[\dimexpr5pt+#1\dimexpr0.06pt]{\lbrace}{\rule[\dimexpr2pt-#1\dimexpr0.5pt]{-4pt}{#1pt}}{.}}
+\newcommand{\myrbrace}[2]{\vspace{#2pt}\scaleleftright[\dimexpr5pt+#1\dimexpr0.06pt]{.}{\rule[\dimexpr2pt-#1\dimexpr0.5pt]{-4pt}{#1pt}}{\rbrace}\hspace{6pt}}
+
+% Trim in percent
+\usepackage{adjustbox}
+
+% No "Figure" prefix
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+% Nice decay amplitude diagrams
+\usepackage{amsmath,amssymb,tikz-cd}
+
+% Strike out text
+\usepackage[normalem]{ulem}
+
+% For figures with text overlay
+\usepackage{overpic}
+
+% Here's where the presentation starts, with the info for the title slide
+\title[$B^\pm\to{[K^+K^-\pi^+\pi^-]}_DK^\pm$]{Measurements of CKM angle \texorpdfstring{$\gamma$}{gamma} in LHCb}
+
+\author[Martin Tat]{Martin Tat, on behalf of the LHCb collaboration}
+\institute[University of Oxford]{\normalsize University of Oxford\\ \vspace{0.3cm}\normalsize Beauty 2023, Clermont-Ferrand}
+\date{3rd-7th July 2023}
+
+\titlegraphic{\includegraphics[height = 2.8cm]{lhcb.jpg}\hspace{1.5cm}~%
+              \includegraphics[height = 2.8cm]{OxfordLogo.pdf}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% These three lines create an automatically generated table of contents.
+% \begin{frame}{Outline}
+%   \tableofcontents
+% \end{frame}
+
+\section{Introduction to \texorpdfstring{$\gamma$}{gamma} and \texorpdfstring{$C\!P$}{CP} violation}
+\begin{frame}{Introduction to $\gamma$ and $C\!P$ violation}
+  \begin{itemize}
+    \setlength\itemsep{0.3em}
+    \item{CPV in SM is described by the Unitary Triangle, with angles $\alpha$, $\beta$, $\gamma$}
+    \item{The angle $\gamma = \text{arg}\Big(-\frac{V^{\phantom{*}}_{ud}V^*_{ub}}{V^{\phantom{*}}_{cd}V^*_{cb}}\Big)$ is very important:}
+    \begin{enumerate}
+    \setlength\itemsep{0.2em}
+      \item{Negligible theoretical uncertainties: Ideal SM benchmark}
+      \item{Accessible at tree level: Indirectly probe New Physics that enter loops}
+      \item{Compare with a global CKM fit: Is the Unitary Triangle a triangle?}
+    \end{enumerate}
+  \end{itemize}
+  \vspace{-0.2cm}
+  \begin{figure}
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width = 1.0\textwidth]{Plots/ckmfitter_tree.png}
+      \caption{Tree level: $\gamma = \big(72.1^{+5.4}_{-5.7}\big)^\circ$}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width = 1.0\textwidth]{Plots/ckmfitter_loop.png}
+      \caption{Loop level: $\gamma = \big(65.5^{+1.1}_{-2.7}\big)^\circ$}
+    \end{subfigure}
+    \vspace{-0.3cm}
+    \caption*{\tiny CKMfitter Group (J. Charles et al.), Eur. Phys. J. C41, 1-131 (2005)}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Sensitivity through interference}
+  \begin{center}
+    \Large Measure $\gamma$ through interference effects in $B^\pm\to DK^\pm$
+  \end{center}
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \begin{fmffile}{fgraph/fgraph_BtoDK1}
+        \setlength{\unitlength}{0.4cm}
+        \begin{fmfgraph*}(6,6)
+          \fmfstraight
+          \fmfleft{i1,B,i2,t1,t2,t3,t9,t10}
+          \fmfright{o1,D,o2,t4,t5,o3,K,o4}
+          \fmflabel{$\bar{u}$}{i1}
+          \fmflabel{$b$}{i2}
+          \fmfv{l.d=20,l.a=180,l={$B^-$\mylbrace{30}{-8}}}{B}
+          \fmflabel{$\bar{u}$}{o1}
+          \fmflabel{$c$}{o2}
+          \fmflabel{$\bar{u}$}{o3}
+          \fmflabel{$s$}{o4}
+          \fmfv{l.d=15,l.a=0,l={\myrbrace{30}{-12}}$D^0$}{D}
+          \fmfv{l.d=15,l.a=0,l={\myrbrace{30}{11}}$K^-$}{K}
+          \fmf{fermion}{o1,i1}
+          \fmf{fermion,tension=1.5}{i2,v1}
+          \fmf{fermion}{v1,o2}
+          \fmf{phantom,tension=1.5}{t9,v2}
+          \fmf{boson,label=$W$,label.side=left,tension=0}{v1,v2}
+          \fmf{fermion}{v2,o4}
+          \fmf{fermion}{o3,v2}
+        \end{fmfgraph*}
+      \end{fmffile}
+      \vspace{0.5cm}
+      \caption*{Favoured $B^-\to D^0K^-$}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \begin{fmffile}{fgraph/fgraph_BtoDK2}
+        \setlength{\unitlength}{0.4cm}
+        \begin{fmfgraph*}(6,6)
+          \fmfstraight
+          \fmfleft{i1,t1,t2,B,t9,t10,i2}
+          \fmfright{o1,K,o2,t4,t5,o3,D,o4}
+          \fmflabel{$\bar{u}$}{i1}
+          \fmflabel{$b$}{i2}
+          \fmfv{l.d=20,l.a=180,l={$B^-$\mylbrace{100}{-8}}}{B}
+          \fmflabel{$\bar{u}$}{o1}
+          \fmflabel{$s$}{o2}
+          \fmflabel{$\bar{c}$}{o3}
+          \fmflabel{$u$}{o4}
+          \fmfv{l.d=15,l.a=0,l={\myrbrace{30}{13}}$\bar{D^0}$}{D}
+          \fmfv{l.d=15,l.a=0,l={\myrbrace{30}{-13}}$K^-$}{K}
+          \fmf{fermion}{o1,i1}
+          \fmf{fermion,tension=1.5}{i2,v1}
+          \fmf{fermion}{v1,o4}
+          \fmf{phantom,tension=1.5}{t2,v2}
+          \fmf{boson,label=$W$,label.side=left,tension=0}{v1,v2}
+          \fmf{fermion}{v2,o2}
+          \fmf{fermion}{o3,v2}
+        \end{fmfgraph*}
+      \end{fmffile}
+      \vspace{0.5cm}
+      \caption*{Suppressed $B^-\to\bar{D^0}K^-$}
+    \end{subfigure}
+  \end{figure}
+  \vspace{-0.3cm}
+  \begin{itemize}
+    \item{Superposition of $D^0$ and $\bar{D^0}$}
+    \begin{itemize}
+      \item{Consider $D^0$/$\bar{D^0}$ decays to the same final state, such as $D\to K^+K^-$}
+    \end{itemize}
+    \item{$b\to u\bar{c}s$ and $b\to c\bar{u}s$ interference $\to$ Sensitivity to $\gamma$}
+  \end{itemize}
+  \vspace{-0.3cm}
+  \begin{center}
+    $\mathcal{A}(B^-)=\mathcal{A}_B\Big(\mathcal{A}_{D^0} + r_Be^{i(\delta_B - \gamma)}\mathcal{A}_{\bar{D^0}}\Big)$ \\
+    $\mathcal{A}(B^+)=\mathcal{A}_B\Big(\mathcal{A}_{\bar{D^0}} + r_Be^{i(\delta_B + \gamma)}\mathcal{A}_{D^0}\Big)$ \\
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Multi-body $D$ decays}
+  \begin{center}
+    This talk: Focus on multi-body $D$ decays, where interference effects vary across phase space
+  \end{center}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Hadronic parameters $r_D$ and $\delta_D$ are functions of phase space}
+    \item{Compare yields of $B^+$ and $B^-$ and determine the asymmetry \underline{in local phase space regions}}
+  \end{itemize}
+  \begin{equation*}
+    \begin{tikzcd}[column sep=huge]
+      & D^0K^- \arrow[dr, bend left = 25, "\mathcal{A}_{D^0}"] & \\
+      B^- \arrow[ur, bend left, "\mathcal{A}_B"] \arrow[dr, bend right, "\mathcal{A}_B r_B e^{i(\delta_B - \gamma)}"'] & [5cm] & DK^- \\
+      & \bar{D^0}K^- \arrow[ur, bend right = 25, "\mathcal{A}_{\bar{D^0}}"'] & \\
+    \end{tikzcd}
+  \end{equation*}
+  \vspace{-0.7cm}
+  \begin{equation*}
+    \lvert\mathcal{A}(B^-)\lvert^2\propto1 + r_B^2r_D^2 + 2r_Br_D\cos(\delta_B - \gamma + \delta_D)
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Multi-body $D$ decays}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Measurements of the amplitude-averaged $\delta_D$, $c_i$ and $s_i$, have been measured directly at CLEO-c and BESIII}
+    \begin{itemize}
+      \item{CLEO: \href{https://doi.org/10.1103/PhysRevD.82.112006}{Phys. Rev. \textbf{D82} (2010) 112006}}
+      \item{BESIII: \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.112002}{Phys. Rev. \textbf{D101} (2020) 112002}}
+    \end{itemize}
+    \item{The value of $\gamma$ obtained will be \underline{model independent}}
+    \item{Single most precise measurement: $\gamma = \big(68.7^{+5.2}_{-5.1}\big)^\circ$}
+    \begin{itemize}
+      \item{\href{https://link.springer.com/article/10.1007/JHEP02(2021)169}{JHEP \textbf{02} (2021) 0169}}
+    \end{itemize}
+  \end{itemize}
+  \begin{figure}
+    \begin{subfigure}{0.45\textwidth}
+      \includegraphics[height = 4.0cm]{Plots/KsPiPi_optimal.png}
+      \vspace{-0.3cm}
+      \caption*{$K_S^0\pi^+\pi^-$}
+    \end{subfigure}%
+    \begin{subfigure}{0.45\textwidth}
+      \includegraphics[height = 4.0cm]{Plots/KsKK_binning.png}
+      \vspace{-0.3cm}
+      \caption*{$K_S^0K^+K^-$}
+    \end{subfigure}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Neutral $B$ decays}
+  \begin{center}
+  {\Large This method may be generalised to neutral $B$ decays:}
+  \end{center}
+  \vspace{1.0cm}
+  \begin{figure}[H]
+    \centering
+    \begin{fmffile}{fgraph/fgraph_B02DKst_Kst2Kpi}
+      \setlength{\unitlength}{0.7cm}
+      \begin{fmfgraph*}(6,4)
+        \fmfstraight
+        \fmfleft{i1}
+        \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.2w,label=$D^0$,label.angle=180,label.dist=0.5cm}{i1}
+        \fmfright{o1,o2,o3,g1,o4,o5}
+        \fmflabel{$\pi^-$}{o1}
+        \fmflabel{$\pi^+$}{o2}
+        \fmflabel{$K_S^0$}{o3}
+        \fmflabel{$\pi^-$}{o4}
+        \fmflabel{$K^+$}{o5}
+        \fmf{plain,tension=1.5}{i1,v1}
+        \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.15w,label=\small$K^*(892)^0$,label.angle=100,label.dist=1.7cm}{v1}
+        \fmf{plain}{v1,o1}
+        \fmf{plain}{v1,o2}
+        \fmf{plain}{v1,o3}
+        \fmf{plain,tension=1.5}{i1,v2}
+        \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.15w,label=\footnotesize$D^0$,label.angle=-100,label.dist=1.6cm}{v2}
+        \fmf{phantom}{v2,g1}
+        \fmf{plain}{v2,o4}
+        \fmf{plain}{v2,o5}
+      \end{fmfgraph*}
+    \end{fmffile}
+  \end{figure}
+  \vspace{0.5cm}
+  \begin{center}
+    {\Large $B^0\to(K_S^0h^+h^-)_D(K^+\pi^-)_{K^*}$}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Neutral $B$ decays}
+  \begin{figure}
+    \begin{subfigure}{0.45\textwidth}
+      \includegraphics[height = 4.0cm]{example-image-a}
+    \end{subfigure}%
+    \begin{subfigure}{0.45\textwidth}
+      \includegraphics[height = 4.0cm]{example-image-a}
+    \end{subfigure}
+  \end{figure}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Non-zero bin asymmetries are observed:}
+    \begin{itemize}
+      \item{\underline{Large} asymmetries are seen}
+      \item{Some bins have \underline{opposite} asymmetries}
+    \end{itemize}
+    \item{Measured $C\!P$-violating observables:}
+    \begin{itemize}
+      \item{$x_\pm\equiv r_{B^0}\cos(\delta_{B^0} \pm \gamma)$}
+      \item{$y_\pm\equiv r_{B^0}\sin(\delta_{B^0} \pm \gamma)$}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Neutral $B$ decays}
+  \begin{figure}
+    \begin{subfigure}{0.45\textwidth}
+      \includegraphics[height = 4.0cm]{example-image-a}
+    \end{subfigure}%
+    \begin{subfigure}{0.45\textwidth}
+      \includegraphics[height = 4.0cm]{example-image-a}
+    \end{subfigure}
+  \end{figure}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Measured value of $\gamma$ is consistent with world average and will be an important contribution to the combination}
+    \begin{itemize}
+      \item{$gamma = (49 \pm 20)^\circ$}
+      \item{$r_{B^0} = 0.27 \pm 0.07$}
+      \item{$\delta_{B^0} = (236 \pm 19)^\circ$}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Phase-space binned analysis of \texorpdfstring{$B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}{B2DKD2KKpipi}}
+\begin{frame}{Phase-space binned analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+  \begin{center}
+    \Large We can also consider more complicated multi-body decays: $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$
+  \end{center}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Phase space is 5-dimensional...}
+    \item{...use an amplitude model to determine an efficient binning scheme!}
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width = 0.55\textwidth]{Plots/BinningSchemePlot_8Bins.pdf}
+  \end{figure}
+  \vspace{-0.5cm}
+  \begin{center}
+    Bins $i < 0$ on top, $i > 0$ below
+  \end{center}
+\end{frame}
+
+\begin{frame}{Phase-space binned analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+  \begin{figure}
+    \includegraphics[height = 5cm]{Plots/BinAsymmetries_dk.pdf}
+    \caption*{\tiny arXiv:2301.10328}
+  \end{figure}
+  \vspace{-0.4cm}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Clear bin asymmetries are seen, and the non-trivial distribution is driven by the change in strong phases across phase space}
+    \item{While the interpretation of $\gamma$ require charm inputs, the observed bin asymmetries are model independent}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Phase-space integrated analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+  \begin{center}
+    {\large Additionally, one can measure the phase-space integrated asymmetries and measure additional $C\!P$-violating observables}
+  \end{center}
+  \begin{figure}
+    \centering
+    \includegraphics[width = 1.0\textwidth,trim={0 7cm 0 0},clip=true]{Plots/d2kkpipi_fiveL_allDP_GLW.pdf}
+    \caption*{\tiny arXiv:2301.10328}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Phase-space integrated analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+  \begin{center}
+    {\large This measurement is performed on both $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$ and $B^\pm\to[\pi^+\pi^-\pi^+\pi^-]_DK^\pm$}
+  \end{center}
+  \centering
+  \def\arraystretch{1.2}%
+  \begin{tabular}{cc}
+    \hline
+    $C\!P$-violating observable & Fit results \\
+    \hline
+    $A_K^{KK\pi\pi}$            & $\phantom{-}0.095\phantom{0} \pm 0.023\phantom{0} \pm 0.002\phantom{0}$ \\
+    $A_\pi^{KK\pi\pi}$          & $-0.009\phantom{0} \pm 0.006\phantom{0} \pm 0.001\phantom{0}$ \\
+    $A_K^{\pi\pi\pi\pi}$        & $\phantom{-}0.061\phantom{0} \pm 0.013\phantom{0} \pm 0.002\phantom{0}$ \\
+    $A_\pi^{\pi\pi\pi\pi}$      & $-0.0082 \pm 0.0031 \pm 0.0007$ \\
+    $R_{C\!P}^{KK\pi\pi}$       & $\phantom{-}0.974\phantom{0} \pm 0.024\phantom{0} \pm 0.015\phantom{0}$ \\
+    $R_{C\!P}^{\pi\pi\pi\pi}$   & $\phantom{-}0.978\phantom{0} \pm 0.014\phantom{0} \pm 0.010\phantom{0}$ \\
+    \hline
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Interpretation of $\gamma$}
+  \begin{center}
+    \Large Combine phase-space binned and integrated results to obtain $\gamma$:
+  \end{center}
+  \begin{equation*}
+    \gamma = (116^{+12}_{-14})^\circ
+  \end{equation*}
+  \begin{figure}[htb]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width=1\textwidth]{Plots/gammacharm_lhcb_KKpipi_GLW_KKpipi_GGSZ_lhcb_2020_beauty_and_charm_g_d_dk.pdf}  
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \includegraphics[width=1\textwidth]{Plots/gammacharm_lhcb_KKpipi_GLW_KKpipi_GGSZ_lhcb_2020_beauty_and_charm_r_dk_d_dk.pdf}
+    \end{subfigure}
+  \end{figure}
+  \begin{center}
+    {\Large These results are \underline{model dependent}, and will be updated once BESIII strong-phase inputs are available}
+  \end{center}
+\end{frame}
+
+\section{Summary and conclusion}
+\begin{frame}{Summary and conclusion}
+  \begin{enumerate}
+    \setlength\itemsep{1.0em}
+    \item{Work in progress!}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Summary and conclusion}
+  \begin{center}
+    {\huge Thanks for your attention!}
+  \end{center}
+\end{frame}
+
+\end{document}
