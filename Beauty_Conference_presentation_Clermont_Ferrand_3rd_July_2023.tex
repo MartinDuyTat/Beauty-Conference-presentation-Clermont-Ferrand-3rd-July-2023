@@ -59,7 +59,7 @@
 \usepackage{overpic}
 
 % Here's where the presentation starts, with the info for the title slide
-\title[$B^\pm\to{[K^+K^-\pi^+\pi^-]}_DK^\pm$]{Measurements of CKM angle \texorpdfstring{$\gamma$}{gamma} in LHCb}
+\title[Beauty 2023]{Measurements of CKM angle \texorpdfstring{$\gamma$}{gamma} in LHCb}
 
 \author[Martin Tat]{Martin Tat, on behalf of the LHCb collaboration}
 \institute[University of Oxford]{\normalsize University of Oxford\\ \vspace{0.3cm}\normalsize Beauty 2023, Clermont-Ferrand}
@@ -215,16 +215,13 @@
 \begin{frame}{Multi-body $D$ decays}
   \begin{itemize}
     \setlength\itemsep{0.5em}
-    \item{Measurements of the amplitude-averaged $\delta_D$, $c_i$ and $s_i$, have been measured directly at CLEO-c and BESIII}
+    \item{Measurements of the amplitude-averaged $\delta_D$, $c_i$ and $s_i$, have been measured directly at:}
     \begin{itemize}
-      \item{CLEO: \href{https://doi.org/10.1103/PhysRevD.82.112006}{Phys. Rev. \textbf{D82} (2010) 112006}}
-      \item{BESIII: \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.112002}{Phys. Rev. \textbf{D101} (2020) 112002}}
+      \item{CLEO \href{https://doi.org/10.1103/PhysRevD.82.112006}{Phys. Rev. \textbf{D82} (2010) 112006}}
+      \item{BESIII \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.112002}{Phys. Rev. \textbf{D101} (2020) 112002}}
     \end{itemize}
     \item{The value of $\gamma$ obtained will be \underline{model independent}}
-    \item{Single most precise measurement: $\gamma = \big(68.7^{+5.2}_{-5.1}\big)^\circ$}
-    \begin{itemize}
-      \item{\href{https://link.springer.com/article/10.1007/JHEP02(2021)169}{JHEP \textbf{02} (2021) 0169}}
-    \end{itemize}
+    \item{$\gamma = \big(68.7^{+5.2}_{-5.1}\big)^\circ$ with $B^\pm\to[K^0_Sh^+h^-]_Dh^\pm$ \href{https://link.springer.com/article/10.1007/JHEP02(2021)169}{JHEP \textbf{02} (2021) 0169}}
   \end{itemize}
   \begin{figure}
     \begin{subfigure}{0.45\textwidth}
@@ -252,7 +249,7 @@
       \begin{fmfgraph*}(6,4)
         \fmfstraight
         \fmfleft{i1}
-        \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.2w,label=$D^0$,label.angle=180,label.dist=0.5cm}{i1}
+        \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.2w,label=$B^0$,label.angle=180,label.dist=0.5cm}{i1}
         \fmfright{o1,o2,o3,g1,o4,o5}
         \fmflabel{$\pi^-$}{o1}
         \fmflabel{$\pi^+$}{o2}
@@ -281,41 +278,75 @@
 \begin{frame}{Neutral $B$ decays}
   \begin{figure}
     \begin{subfigure}{0.45\textwidth}
-      \includegraphics[height = 4.0cm]{example-image-a}
+      \includegraphics[height = 4.0cm]{Plots/Kspp_LL_GF_B0toDKst.pdf}
     \end{subfigure}%
     \begin{subfigure}{0.45\textwidth}
-      \includegraphics[height = 4.0cm]{example-image-a}
+      \includegraphics[height = 4.0cm]{Plots/Kspp_DD_GF_B0toDKst.pdf}
     \end{subfigure}
   \end{figure}
   \begin{itemize}
     \setlength\itemsep{0.5em}
-    \item{Non-zero bin asymmetries are observed:}
+    \item{Two separate selections of $K^0_S$:}
     \begin{itemize}
-      \item{\underline{Large} asymmetries are seen}
-      \item{Some bins have \underline{opposite} asymmetries}
+      \item{LL (long tracks): $K^0_S$ decays in the VELO}
+      \item{DD (downstream tracks): $K^0_S$ decays downstream of the VELO}
     \end{itemize}
-    \item{Measured $C\!P$-violating observables:}
+    \item{$B^0\to DK^{*0}$ candidates with $D\to K_S^0\pi^+\pi^-$ ($D\to K_S^0K^+K^-$):}
     \begin{itemize}
-      \item{$x_\pm\equiv r_{B^0}\cos(\delta_{B^0} \pm \gamma)$}
-      \item{$y_\pm\equiv r_{B^0}\sin(\delta_{B^0} \pm \gamma)$}
+      \item{LL: $102 \pm 17$ ($12 \pm 6$)}
+      \item{DD: $288 \pm 25$ ($32 \pm 8$)}
     \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Neutral $B$ decays}
   \begin{figure}
+    \includegraphics[height = 5.0cm]{Plots/CPFitAsymmetry_B0toDKst.pdf}
+  \end{figure}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Non-zero bin asymmetries are observed:}
+    \begin{itemize}
+      \item{\underline{Large} asymmetries are seen between $B^0$ ($\bar{B^0}$) bin pairs}
+      \item{No CPV is observed in $B^0_s$ decays}
+    \end{itemize}
+    \item[]{\phantom{Asymmetries differ in size and magnitude across bins of phase space}}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Neutral $B$ decays}
+  \begin{figure}
+    \includegraphics[height = 5.0cm]{Plots/Asymmetry_B0toDKst.pdf}
+  \end{figure}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Non-zero bin asymmetries are observed:}
+    \begin{itemize}
+      \item{\underline{Large} asymmetries are seen between $B^0$ ($\bar{B^0}$) bin pairs}
+      \item{No CPV is observed in $B^0_s$ decays}
+    \end{itemize}
+    \item{Asymmetries differ in size and magnitude across bins of phase space}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Neutral $B$ decays}
+  \begin{figure}
     \begin{subfigure}{0.45\textwidth}
-      \includegraphics[height = 4.0cm]{example-image-a}
+      \includegraphics[height = 4.0cm]{Plots/cp_contours_B0toDKst.pdf}
     \end{subfigure}%
     \begin{subfigure}{0.45\textwidth}
-      \includegraphics[height = 4.0cm]{example-image-a}
+      \includegraphics[height = 4.0cm]{Plots/B0ToDKStar_GGSZ_g_db_B0toDKst.pdf}
     \end{subfigure}
   \end{figure}
   \begin{itemize}
     \setlength\itemsep{0.5em}
-    \item{Measured value of $\gamma$ is consistent with world average and will be an important contribution to the combination}
+    \item{Measured $C\!P$-violating observables:}
+    \begin{center}
+      $x_\pm\equiv r_{B^0}\cos(\delta_{B^0} \pm \gamma)$ and $y_\pm\equiv r_{B^0}\sin(\delta_{B^0} \pm \gamma)$
+    \end{center}
+    \item{Measured value of $\gamma$ is consistent with world average:}
     \begin{itemize}
-      \item{$gamma = (49 \pm 20)^\circ$}
+      \item{$\gamma = (49 \pm 20)^\circ$}
       \item{$r_{B^0} = 0.27 \pm 0.07$}
       \item{$\delta_{B^0} = (236 \pm 19)^\circ$}
     \end{itemize}
@@ -411,7 +442,18 @@
 \begin{frame}{Summary and conclusion}
   \begin{enumerate}
     \setlength\itemsep{1.0em}
-    \item{Work in progress!}
+    \item{LHCb has produced several measurements of $\gamma$ using different $B$ and $D$ decay combinations}
+    \item{Phase-space binned analyses is the workhorse of our $\gamma$ (and charm) combination}
+    \item{I have presented two new model-independent measurements using the golden modes $D\to K_S^0h^+h^-$:}
+    \begin{itemize}
+      \item{$B^0\to DK^{*0}$}
+      \item{$B^\pm\to D^{*}h^\pm$ with $D^*\to D\pi^0$ and $D\gamma$}
+    \end{itemize}
+    \item{Additionally, a binned measurement with the channel $B^\pm\to[K^+K^-\pi^+\pi^-]$ has been performed for the first time}
+    \begin{itemize}
+      \item{Model-dependent result has some tension with current world average}
+      \item{Need external inputs for charm strong-phases from BESIII!}
+    \end{itemize}
   \end{enumerate}
 \end{frame}
 
