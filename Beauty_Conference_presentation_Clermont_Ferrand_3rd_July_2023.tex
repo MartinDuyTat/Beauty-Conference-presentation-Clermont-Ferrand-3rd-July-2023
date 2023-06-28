@@ -237,11 +237,13 @@
   \end{figure}
 \end{frame}
 
+\section{Neutral \texorpdfstring{$B$}{B} decays}
 \begin{frame}{Neutral $B$ decays}
   \begin{center}
-  {\Large This method may be generalised to neutral $B$ decays:}
+  {\Large This method may be generalised to neutral $B$ decays:}\\~\\
+  {\large LHCb-PAPER-2023-009\quad \colorbox{lime}{New preliminary results!}}\\
   \end{center}
-  \vspace{1.0cm}
+  \vspace{0.5cm}
   \begin{figure}[H]
     \centering
     \begin{fmffile}{fgraph/fgraph_B02DKst_Kst2Kpi}
@@ -279,11 +281,14 @@
   \begin{figure}
     \begin{subfigure}{0.45\textwidth}
       \includegraphics[height = 4.0cm]{Plots/Kspp_LL_GF_B0toDKst.pdf}
+      \caption*{LL}
     \end{subfigure}%
     \begin{subfigure}{0.45\textwidth}
       \includegraphics[height = 4.0cm]{Plots/Kspp_DD_GF_B0toDKst.pdf}
+      \caption*{DD}
     \end{subfigure}
   \end{figure}
+  \vspace{-0.5cm}
   \begin{itemize}
     \setlength\itemsep{0.5em}
     \item{Two separate selections of $K^0_S$:}
@@ -347,36 +352,178 @@
     \item{Measured value of $\gamma$ is consistent with world average:}
     \begin{itemize}
       \item{$\gamma = (49 \pm 20)^\circ$}
-      \item{$r_{B^0} = 0.27 \pm 0.07$}
       \item{$\delta_{B^0} = (236 \pm 19)^\circ$}
+      \item{$r_{B^0} = 0.27 \pm 0.07$}
     \end{itemize}
   \end{itemize}
 \end{frame}
 
-\section{Phase-space binned analysis of \texorpdfstring{$B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}{B2DKD2KKpipi}}
-\begin{frame}{Phase-space binned analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+\section{\texorpdfstring{$B$}{B} decays to excited \texorpdfstring{$D^*$}{Dst} final states}
+\begin{frame}{$B$ decays to excited $D^*$ final states}
   \begin{center}
-    \Large We can also consider more complicated multi-body decays: $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$
+  {\Large $B^-\to D^*K^-$ decays are also a powerful probe of CPV:}\\~\\
+  {\large LHCb-PAPER-2023-012\quad \colorbox{lime}{New preliminary results!}}
   \end{center}
-  \begin{itemize}
-    \setlength\itemsep{0.5em}
-    \item{Phase space is 5-dimensional...}
-    \item{...use an amplitude model to determine an efficient binning scheme!}
-  \end{itemize}
-  \begin{figure}
+  \vspace{0.5cm}
+  \begin{figure}[H]
     \centering
-    \includegraphics[width = 0.55\textwidth]{Plots/BinningSchemePlot_8Bins.pdf}
+    \begin{subfigure}{0.45\textwidth}
+      \centering
+      \begin{fmffile}{fgraph/fgraph_BtoDstK_pi0}
+        \setlength{\unitlength}{0.7cm}
+        \begin{fmfgraph*}(4,3)
+          \fmfstraight
+          \fmfleft{i1}
+          \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.2w,label=$B^-$,label.angle=180,label.dist=0.5cm}{i1}
+          \fmfright{o1,o2,o3}
+          \fmflabel{$K^-$}{o1}
+          \fmflabel{$\pi^0$}{o2}
+          \fmflabel{$D$}{o3}
+          \fmf{plain,tension=1.5}{i1,v1}
+          \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.15w,label=\small$D^*$,label.angle=100,label.dist=0.5cm}{v1}
+          \fmf{plain}{v1,o2}
+          \fmf{plain}{v1,o3}
+          \fmf{plain}{i1,o1}
+        \end{fmfgraph*}
+      \end{fmffile}
+      \vspace{0.5cm}
+      \caption*{$B^-\to[D\pi^0]_{D^*}K^-$}
+    \end{subfigure}%
+    \begin{subfigure}{0.45\textwidth}
+      \centering
+      \begin{fmffile}{fgraph/fgraph_BtoDstK_gamma}
+        \setlength{\unitlength}{0.7cm}
+        \begin{fmfgraph*}(4,3)
+          \fmfstraight
+          \fmfleft{i1}
+          \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.2w,label=$B^-$,label.angle=180,label.dist=0.5cm}{i1}
+          \fmfright{o1,o2,o3}
+          \fmflabel{$K^-$}{o1}
+          \fmflabel{$\gamma$}{o2}
+          \fmflabel{$D$}{o3}
+          \fmf{plain,tension=1.5}{i1,v1}
+          \fmfv{decor.shape=circle,decor.filled=shaded,decor.size=0.15w,label=\small$D^*$,label.angle=100,label.dist=0.5cm}{v1}
+          \fmf{plain}{v1,o2}
+          \fmf{plain}{v1,o3}
+          \fmf{plain}{i1,o1}
+        \end{fmfgraph*}
+      \end{fmffile}
+      \vspace{1.0cm}
+      \caption*{$B^-\to[D\gamma]_{D^*}K^-$}
+    \end{subfigure}
   \end{figure}
   \vspace{-0.5cm}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        $\mathcal{A}(B^-)\propto\mathcal{A}(D^0) + r_Be^{i(\delta_B - \gamma)}\mathcal{A}(\bar{D^0})$
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        $\mathcal{A}(B^-)\propto\mathcal{A}(D^0) - r_Be^{i(\delta_B - \gamma)}\mathcal{A}(\bar{D^0})$
+      \end{center}
+    \end{column}
+  \end{columns}
   \begin{center}
-    Bins $i < 0$ on top, $i > 0$ below
+    The relative signal swap results in \underline{opposite} $C\!P$ asymmetries between $D^*\to D\pi^0$ and $D^*\to D\gamma$
   \end{center}
 \end{frame}
 
-\begin{frame}{Phase-space binned analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+\begin{frame}{$B$ decays to excited $D^*$ final states}
+  \begin{figure}
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width = 0.8\textwidth]{Plots/massfitPage_canvas_pi0_d2kspipi_b2dpi_LL_merge_BtoDstpi.pdf}
+      \caption*{$D^*\to D\pi^0$}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width = 0.8\textwidth]{Plots/massfitPage_canvas_gamma_d2kspipi_b2dpi_LL_merge_BtoDstpi.pdf}
+      \caption{$D^*\to D\gamma$}
+    \end{subfigure}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{$B$ decays to excited $D^*$ final states}
+  \begin{figure}
+    \includegraphics[height = 5.0cm]{Plots/histCPVnewd2kspipib2dk_BtoDstK.png}
+  \end{figure}
+  \vspace{-0.5cm}
+  \begin{itemize}
+    \setlength\itemsep{0.5em}
+    \item{Good agreement between individual bin asymmetries and the combined $C\!P$ fit}
+    \item{Bin asymmetries between $D^*\to D\pi^0$ and $D^*\to D\gamma$ are generally \underline{opposite} in magnitude}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{$B$ decays to excited $D^*$ final states}
+  \begin{figure}
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[height=5.0cm]{Plots/xyfinalres_BtoDstK.pdf}
+    \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[height=4.4cm]{Plots/cartesian_cartesian1_g_r_dk_BtoDstK.pdf}
+    \end{subfigure}
+  \end{figure}
+  \vspace{-1.0cm}
+  \begin{center}
+    These results provide strong constraints on $\gamma$:
+  \end{center}
+  \begin{itemize}
+  \item{$\gamma = (69 \pm 14)^\circ$}
+  \item{$\delta_B^{D^*K} = (311 \pm 15)^\circ$}
+  \item{$r_B^{D^*K} = 0.15 \pm 0.03$}
+  \end{itemize}
+\end{frame}
+
+\section{Phase-space binned analysis of \texorpdfstring{$B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}{B2DKD2KKpipi}}
+\begin{frame}{Phase-space binned $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+  \begin{center}
+    {\Large Can also consider more complicated multi-body decays: $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}\\~\\
+  \end{center}
+  \vspace{-0.5cm}
+  \begin{itemize}
+    \setlength\itemsep{0.0em}
+    \item{Phase space is 5-dimensional...}
+    \item{...use an amplitude model to determine an efficient binning scheme!}
+  \end{itemize}
+  \vspace{-0.2cm}
+  \begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{Plots/BinningSchemePlot_8Bins.pdf}
+  \end{figure}
+  \vspace{-0.5cm}
+  \begin{center}
+    Bins $i < 0$ on top, $i > 0$ below\\
+    LHCb-PAPER-2022-037, \href{https://arxiv.org/abs/2301.10328}{arXiv:2301.10328} (accepted by EPJC)
+  \end{center}
+\end{frame}
+
+\begin{frame}{Phase-space binned $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+  \begin{center}
+    {\large Fully charged final state $\implies$ Highly suitable for LHCb}
+  \end{center}
+  \begin{figure}
+    \centering
+    \includegraphics[width = 1.0\textwidth,trim={0 0 0 0},clip=true]{Plots/d2kkpipi_fiveL_allDP.pdf}
+  \end{figure}
+  \begin{itemize}
+    \item{$B^\pm\to[K^+K^-\pi^+\pi^-]h^\pm$ signal yield:}
+    \begin{itemize}
+      \item{$B^\pm\to DK^\pm$: $3026 \pm 38$}
+      \item{$B^\pm\to D\pi^\pm$: $44349 \pm 218$}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Phase-space binned $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
   \begin{figure}
     \includegraphics[height = 5cm]{Plots/BinAsymmetries_dk.pdf}
-    \caption*{\tiny arXiv:2301.10328}
   \end{figure}
   \vspace{-0.4cm}
   \begin{itemize}
@@ -386,55 +533,39 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Phase-space integrated analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
+\begin{frame}{Phase-space integrated $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
   \begin{center}
     {\large Additionally, one can measure the phase-space integrated asymmetries and measure additional $C\!P$-violating observables}
   \end{center}
   \begin{figure}
     \centering
     \includegraphics[width = 1.0\textwidth,trim={0 7cm 0 0},clip=true]{Plots/d2kkpipi_fiveL_allDP_GLW.pdf}
-    \caption*{\tiny arXiv:2301.10328}
   \end{figure}
-\end{frame}
-
-\begin{frame}{Phase-space integrated analysis of $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$}
   \begin{center}
-    {\large This measurement is performed on both $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$ and $B^\pm\to[\pi^+\pi^-\pi^+\pi^-]_DK^\pm$}
+    {\large More $B^-$ candidates because $D^0\to K^+K^-\pi^+\pi^-$ is predominantly \underline{$C\!P$-even}}
   \end{center}
-  \centering
-  \def\arraystretch{1.2}%
-  \begin{tabular}{cc}
-    \hline
-    $C\!P$-violating observable & Fit results \\
-    \hline
-    $A_K^{KK\pi\pi}$            & $\phantom{-}0.095\phantom{0} \pm 0.023\phantom{0} \pm 0.002\phantom{0}$ \\
-    $A_\pi^{KK\pi\pi}$          & $-0.009\phantom{0} \pm 0.006\phantom{0} \pm 0.001\phantom{0}$ \\
-    $A_K^{\pi\pi\pi\pi}$        & $\phantom{-}0.061\phantom{0} \pm 0.013\phantom{0} \pm 0.002\phantom{0}$ \\
-    $A_\pi^{\pi\pi\pi\pi}$      & $-0.0082 \pm 0.0031 \pm 0.0007$ \\
-    $R_{C\!P}^{KK\pi\pi}$       & $\phantom{-}0.974\phantom{0} \pm 0.024\phantom{0} \pm 0.015\phantom{0}$ \\
-    $R_{C\!P}^{\pi\pi\pi\pi}$   & $\phantom{-}0.978\phantom{0} \pm 0.014\phantom{0} \pm 0.010\phantom{0}$ \\
-    \hline
-  \end{tabular}
 \end{frame}
 
 \begin{frame}{Interpretation of $\gamma$}
   \begin{center}
-    \Large Combine phase-space binned and integrated results to obtain $\gamma$:
+    \large From the phase-space binned asymmetries, we obtain:
   \end{center}
-  \begin{equation*}
-    \gamma = (116^{+12}_{-14})^\circ
-  \end{equation*}
+  \begin{itemize}
+    \item{$\gamma = (116^{+12}_{-14})^\circ$}
+    \item{$\delta_D^{DK} = (81^{+12}_{-14})^\circ$}
+    \item{$r_B^{DK} = 0.110^{+0.020}_{-0.020}$}
+  \end{itemize}
   \begin{figure}[htb]
     \centering
     \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width=1\textwidth]{Plots/gammacharm_lhcb_KKpipi_GLW_KKpipi_GGSZ_lhcb_2020_beauty_and_charm_g_d_dk.pdf}  
+      \includegraphics[width=1\textwidth]{Plots/B2DK_CP_Observables_Contours.pdf}
     \end{subfigure}%
     \begin{subfigure}{0.5\textwidth}
-      \includegraphics[width=1\textwidth]{Plots/gammacharm_lhcb_KKpipi_GLW_KKpipi_GGSZ_lhcb_2020_beauty_and_charm_r_dk_d_dk.pdf}
+      \includegraphics[width=1\textwidth]{Plots/gammacharm_lhcb_KKpipi_GLW_KKpipi_GGSZ_lhcb_2020_beauty_and_charm_g_d_dk.pdf}
     \end{subfigure}
   \end{figure}
   \begin{center}
-    {\Large These results are \underline{model dependent}, and will be updated once BESIII strong-phase inputs are available}
+    {\large These results are \underline{model dependent}, and will be updated once BESIII strong-phase inputs are available}
   \end{center}
 \end{frame}
 
@@ -442,14 +573,14 @@
 \begin{frame}{Summary and conclusion}
   \begin{enumerate}
     \setlength\itemsep{1.0em}
-    \item{LHCb has produced several measurements of $\gamma$ using different $B$ and $D$ decay combinations}
-    \item{Phase-space binned analyses is the workhorse of our $\gamma$ (and charm) combination}
-    \item{I have presented two new model-independent measurements using the golden modes $D\to K_S^0h^+h^-$:}
+    \item{LHCb has produced several measurements of $\gamma$ using different $B$ and $D^{(*)}$ decay combinations}
+    \item{Phase-space binned analyses using the golden mode $D\to K_S^0\pi^+\pi^-$ provide the most powerful constraints for our $\gamma$ combination}
+    \item{I have presented two new model-independent measurements:}
     \begin{itemize}
-      \item{$B^0\to DK^{*0}$}
+      \item{$B^0\to DK^{*0}$ with $K^{*0}\to K^+\pi^-$}
       \item{$B^\pm\to D^{*}h^\pm$ with $D^*\to D\pi^0$ and $D\gamma$}
     \end{itemize}
-    \item{Additionally, a binned measurement with the channel $B^\pm\to[K^+K^-\pi^+\pi^-]$ has been performed for the first time}
+    \item{Additionally, a binned measurement with the channel $B^\pm\to[K^+K^-\pi^+\pi^-]K^\pm$ has been performed for the first time}
     \begin{itemize}
       \item{Model-dependent result has some tension with current world average}
       \item{Need external inputs for charm strong-phases from BESIII!}
