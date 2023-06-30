@@ -11,7 +11,7 @@
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass{beamer}
+\documentclass[xcolor={dvipsnames}]{beamer}
 
 \mode<presentation>
 {
@@ -57,6 +57,15 @@
 
 % For figures with text overlay
 \usepackage{overpic}
+
+% Arrows
+\usepackage{tikz}
+\newcommand{\tikzmark}[1]{\tikz[remember picture] \node[coordinate] (#1) {#1};}
+
+% Colourbox with line breaks
+\newcommand{\cbox}[2][lime!20]{%
+  \colorbox{#1}{\parbox{\dimexpr\linewidth-2\fboxsep}{\strut #2\strut}}%
+}
 
 % Here's where the presentation starts, with the info for the title slide
 \title[Beauty 2023]{Measurements of CKM angle \texorpdfstring{$\gamma$}{gamma} in LHCb}
@@ -190,6 +199,129 @@
   \end{center}
 \end{frame}
 
+\begin{frame}{Summary of LHCb \texorpdfstring{$\gamma$}{gamma} measurements}
+  \begin{center}
+    {\Large Our most precise knowledge of $\gamma$ comes from the combination of $\gamma$ and charm mixing parameters}\\~\\
+    {\large LHCb-CONF-2022-003}
+  \end{center}
+  \begin{figure}
+    \includegraphics[width=0.5\textwidth]{Plots/gammacharm_lhcb_comp_flavour.pdf}
+  \end{figure}
+  \vspace{-0.5cm}
+  \begin{center}
+    Most precise determination from a single experiment: $\gamma = (63.8^{+3.5}_{-3.7})^\circ$\\
+    The dominant contributions are from \underline{charged $B^\pm$} decays
+  \end{center}
+\end{frame}
+
+\begin{frame}{Summary of LHCb \texorpdfstring{$\gamma$}{gamma} measurements}
+  \begin{figure}
+    \includegraphics[height=5cm]{Plots/gammacharm_lhcb_dhch_g_r_dk.pdf}
+  \end{figure}
+  \vspace{-0.8cm}
+  \begin{center}
+    The $\gamma$ combination is mainly driven by $B^\pm\to Dh^\pm$, where:
+  \end{center}
+  \vspace{-0.2cm}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \setlength\itemsep{0.5em}
+        \item{$D\to K^+K^-$, $\pi^+\pi^-$, $K^\mp\pi^\pm$}
+        \item{$D\to K_S^0\pi^+\pi^-$, $K_S^0K^+K^-$}
+        \item{$D\to K^\mp\pi^\pm\pi^-\pi^+$}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item[]{\phantom{These multi-body decays are analysed in \underline{local regions} of phase space}}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Summary of LHCb \texorpdfstring{$\gamma$}{gamma} measurements}
+  \begin{figure}
+    \includegraphics[height=5cm]{Plots/Fig6a_two_body.pdf}
+  \end{figure}
+  \vspace{-0.8cm}
+  \begin{center}
+    The $\gamma$ combination is mainly driven by $B^\pm\to Dh^\pm$, where:
+  \end{center}
+  \vspace{-0.2cm}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \setlength\itemsep{0.5em}
+        \item[$\rightarrow$]{$D\to K^+K^-$, $\pi^+\pi^-$, $K^\mp\pi^\pm$}
+        \item[$\rightarrow$]{$D\to K_S^0\pi^+\pi^-$, $K_S^0K^+K^-$}
+        \item{$D\to K^\mp\pi^\pm\pi^-\pi^+$}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item[]{\phantom{These multi-body decays are analysed in \underline{local regions} of phase space}}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Summary of LHCb \texorpdfstring{$\gamma$}{gamma} measurements}
+  \begin{figure}
+    \includegraphics[height=4cm,trim={0 14.35cm 0 7.07cm},clip=true]{Plots/Fig3_K3pi.pdf}
+  \end{figure}
+  \vspace{0.2cm}
+  \begin{center}
+    The $\gamma$ combination is mainly driven by $B^\pm\to Dh^\pm$, where:
+  \end{center}
+  \vspace{-0.2cm}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \setlength\itemsep{0.5em}
+        \item{$D\to K^+K^-$, $\pi^+\pi^-$, $K^\mp\pi^\pm$}
+        \item{$D\to K_S^0\pi^+\pi^-$, $K_S^0K^+K^-$}
+        \item[$\rightarrow$]{$D\to K^\mp\pi^\pm\pi^-\pi^+$}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item[]{\phantom{These multi-body decays are analysed in \underline{local regions} of phase space}}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Summary of LHCb \texorpdfstring{$\gamma$}{gamma} measurements}
+  \begin{figure}
+    \includegraphics[height=4cm,trim={0 14.35cm 0 7.07cm},clip=true]{Plots/Fig3_K3pi.pdf}
+  \end{figure}
+  \vspace{0.2cm}
+  \begin{center}
+    The $\gamma$ combination is mainly driven by $B^\pm\to Dh^\pm$, where:
+  \end{center}
+  \vspace{-0.2cm}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \setlength\itemsep{0.5em}
+        \item{$D\to K^+K^-$, $\pi^+\pi^-$, $K^\mp\pi^\pm$}
+        \item{$D\to K_S^0\pi^+\pi^-$, $K_S^0K^+K^-$\tikzmark{t1}}
+        \item{$D\to K^\mp\pi^\pm\pi^-\pi^+$\tikzmark{t2}}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item[]{\tikzmark{n1}\cbox{These multi-body decays are analysed in \underline{local regions} of phase space}}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{tikzpicture}[remember picture,overlay]
+    \path[draw=blue,thick,->] ([xshift=-1mm]n1) -- ([yshift=1mm]t1);
+    \path[draw=blue,thick,->] ([xshift=-1mm]n1) -- ([yshift=1mm]t2);
+  \end{tikzpicture}
+\end{frame}
+
 \begin{frame}[fragile]{Multi-body $D$ decays}
   \begin{center}
     This talk: Focus on multi-body $D$ decays, where interference effects vary across phase space
@@ -215,22 +347,25 @@
 \begin{frame}{Multi-body $D$ decays}
   \begin{itemize}
     \setlength\itemsep{0.5em}
-    \item{Measurements of the amplitude-averaged $\delta_D$, $c_i$ and $s_i$, have been measured directly at:}
+    \item{Interpretation of $\gamma$ from the multi-body charm decays require external inputs of the charm strong-phase differences}
+    \item{The three-body decays $D\to K_S^0h^+h^-$ have been studied extensively, using an optimised phase-space binning:}
     \begin{itemize}
       \item{CLEO \href{https://doi.org/10.1103/PhysRevD.82.112006}{Phys. Rev. \textbf{D82} (2010) 112006}}
       \item{BESIII \href{https://journals.aps.org/prd/abstract/10.1103/PhysRevD.101.112002}{Phys. Rev. \textbf{D101} (2020) 112002}}
     \end{itemize}
-    \item{The value of $\gamma$ obtained will be \underline{model independent}}
-    \item{$\gamma = \big(68.7^{+5.2}_{-5.1}\big)^\circ$ with $B^\pm\to[K^0_Sh^+h^-]_Dh^\pm$ \href{https://link.springer.com/article/10.1007/JHEP02(2021)169}{JHEP \textbf{02} (2021) 0169}}
+    \item{With charm inputs from CLEO and BESIII, the measurement of $\gamma$ becomes \underline{model independent}}
   \end{itemize}
   \begin{figure}
-    \begin{subfigure}{0.45\textwidth}
-      \includegraphics[height = 4.0cm]{Plots/KsPiPi_optimal.png}
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[height = 3.5cm]{Plots/KsPiPi_optimal.png}
       \vspace{-0.3cm}
       \caption*{$K_S^0\pi^+\pi^-$}
     \end{subfigure}%
-    \begin{subfigure}{0.45\textwidth}
-      \includegraphics[height = 4.0cm]{Plots/KsKK_binning.png}
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[height = 3.5cm]{Plots/KsKK_binning.png}
       \vspace{-0.3cm}
       \caption*{$K_S^0K^+K^-$}
     \end{subfigure}
@@ -500,7 +635,7 @@
   \vspace{-0.5cm}
   \begin{center}
     Bins $i < 0$ on top, $i > 0$ below\\
-    LHCb-PAPER-2022-037, \href{https://arxiv.org/abs/2301.10328}{arXiv:2301.10328} (accepted by EPJC)
+    LHCb-PAPER-2022-037, \href{https://link.springer.com/article/10.1140/epjc/s10052-023-11560-5}{Eur. Phys. J. C \textbf{83}, 547 (2023)}
   \end{center}
 \end{frame}
 
@@ -513,7 +648,7 @@
     \includegraphics[width = 1.0\textwidth,trim={0 0 0 0},clip=true]{Plots/d2kkpipi_fiveL_allDP.pdf}
   \end{figure}
   \begin{itemize}
-    \item{$B^\pm\to[K^+K^-\pi^+\pi^-]h^\pm$ signal yield:}
+    \item{$B^\pm\to[K^+K^-\pi^+\pi^-]_Dh^\pm$ signal yield:}
     \begin{itemize}
       \item{$B^\pm\to DK^\pm$: $3026 \pm 38$}
       \item{$B^\pm\to D\pi^\pm$: $44349 \pm 218$}
@@ -571,24 +706,36 @@
 
 \section{Summary and conclusion}
 \begin{frame}{Summary and conclusion}
+  \vspace{0.0cm}
+  {\Large In summary:}
+  \vspace{0.3cm}
   \begin{enumerate}
     \setlength\itemsep{1.0em}
-    \item{LHCb has produced several measurements of $\gamma$ using different $B$ and $D^{(*)}$ decay combinations}
+    \item{LHCb performed several measurements of $\gamma$, using a set of complementary $B$ and $D^{(*)}$ decay combinations}
     \item{Phase-space binned analyses using the golden mode $D\to K_S^0\pi^+\pi^-$ provide the most powerful constraints for our $\gamma$ combination}
     \item{I have presented two new model-independent measurements:}
     \begin{itemize}
       \item{$B^0\to DK^{*0}$ with $K^{*0}\to K^+\pi^-$}
       \item{$B^\pm\to D^{*}h^\pm$ with $D^*\to D\pi^0$ and $D\gamma$}
     \end{itemize}
-    \item{Additionally, a binned measurement with the channel $B^\pm\to[K^+K^-\pi^+\pi^-]K^\pm$ has been performed for the first time}
+    \item{Additionally, a binned measurement with the channel $B^\pm\to[K^+K^-\pi^+\pi^-]_DK^\pm$ has been performed for the first time}
     \begin{itemize}
-      \item{Model-dependent result has some tension with current world average}
-      \item{Need external inputs for charm strong-phases from BESIII!}
+      \item{Need external inputs for charm strong-phases from BESIII}
     \end{itemize}
   \end{enumerate}
 \end{frame}
 
 \begin{frame}{Summary and conclusion}
+  \vspace{0.0cm}
+  {\Large Future prospects:}
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \setlength\itemsep{1.0em}
+    \item{The measurements I have presented today will make valuable improvements to future $\gamma$ combinations}
+    \item{Measurements are still dominated by statistical uncertainties, and are expected to reduce significantly at the end of Run 3}
+    \item{We expect more time-dependent results, such as $B_s^0\to D_s^-K^+$, which will be interesting to compare with results from $B^\pm$/$B^0$}
+    \end{enumerate}
+    \vspace{1.0cm}
   \begin{center}
     {\huge Thanks for your attention!}
   \end{center}
